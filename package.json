@@ -27,7 +27,9 @@
     "sass": "node-sass ./src/dev-client/sass/ion-dev.scss --output ./bin/ --output-style compressed",
     "sass-watch": "npm run sass && node-sass ./src/dev-client/sass/ion-dev.scss --watch --output ./bin/ --output-style compressed",
     "test": "jest",
-    "watch": "npm run clean && tsc --watch & npm run sass-watch"
+    "watch": "npm run clean && tsc --watch & npm run sass-watch",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "main": "dist/index.js",
   "dependencies": {
@@ -57,7 +59,8 @@
     "uglify-js": "2.7.3",
     "webpack": "2.2.0-rc.3",
     "ws": "1.1.1",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "@angular/common": "4.0.0-beta.5",
@@ -130,5 +133,6 @@
       "^.+\\.(ts)$": "<rootDir>/preprocessor.js"
     },
     "testRegex": "/src/.*\\.spec\\.(ts|js)$"
-  }
+  },
+  "snyk": true
 }
